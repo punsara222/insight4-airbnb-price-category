@@ -1,0 +1,9 @@
+# Replace the first four versions with the EXACT ones printed by the Colab script.
+scikit-learn==1.6.1
+numpy==2.0.2
+pandas==2.2.2
+joblib==1.4.2
+fastapi
+uvicorn
+requests
+streamlit

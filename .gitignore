@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Data (keep the full dataset out of git; link to it in data/README.md)
+data/*.csv
+!data/sample_*.csv
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+.ipynb_checkpoints/
