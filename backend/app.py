@@ -34,8 +34,10 @@ class PredictRequest(BaseModel):
     features: Dict[str, Any] = Field(
         ...,
         description="Listing details as field: value pairs. See GET /schema for valid fields.",
-        examples=[{"neighbourhood_group_cleansed": "Brooklyn", "room_type": "Entire home/apt",
-                   "accommodates": 4, "bedrooms": 2}],
+        examples=[{"neighbourhood_group_cleansed": "Brooklyn",
+                   "neighbourhood_cleansed": "Williamsburg",
+                   "room_type": "Entire home/apt", "property_type": "Entire rental unit",
+                   "accommodates": 4, "bathrooms": 1, "bedrooms": 2, "beds": 2}],
     )
 
 
@@ -63,7 +65,15 @@ def schema():
         "fields": predictor.spec,
         "defaults": predictor.defaults,
         "classes": predictor.classes,
+        "neighbourhoods_by_borough": _hoods_by_borough(),
     }
+
+
+def _hoods_by_borough():
+    out = {}
+    for hood, info in predictor.lookup.items():
+        out.setdefault(info["borough"], []).append(hood)
+    return {b: sorted(h) for b, h in sorted(out.items())}
 
 
 @app.post("/predict")

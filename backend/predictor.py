@@ -21,10 +21,14 @@ MODEL_DIR = Path(__file__).resolve().parent.parent / "models"
 # the training median (numbers) or most common value (categories).
 # EDIT THIS LIST to match the column names printed by the Colab script.
 REQUIRED_FIELDS = [
-    "neighbourhood_group_cleansed",
+    "neighbourhood_group_cleansed",   # borough
+    "neighbourhood_cleansed",         # neighbourhood
     "room_type",
+    "property_type",
     "accommodates",
+    "bathrooms",
     "bedrooms",
+    "beds",
 ]
 
 TRUE_WORDS = {"true", "t", "1", "yes", "y"}
@@ -46,6 +50,12 @@ class Predictor:
         self.feature_columns = list(joblib.load(model_dir / "feature_columns.pkl"))
         self.spec = json.loads((model_dir / "input_spec.json").read_text())
         self.defaults = json.loads((model_dir / "defaults.json").read_text())
+
+        # Optional: neighbourhood -> borough + median coordinates
+        lookup_path = model_dir / "neighbourhood_lookup.json"
+        self.lookup = json.loads(lookup_path.read_text()) if lookup_path.exists() else {}
+        if not self.lookup:
+            log.warning("neighbourhood_lookup.json not found - coordinates will use city-wide defaults")
 
         self.raw_columns = list(self.pre.feature_names_in_)
         self.out_names = list(self.pre.get_feature_names_out())
@@ -131,6 +141,19 @@ class Predictor:
                     errors.append(f"'{col}' has an unknown value {text!r}. Allowed: {preview}")
                     continue
                 row[col] = text
+
+        # Cross-field checks using the neighbourhood lookup
+        hood = row.get("neighbourhood_cleansed")
+        info = self.lookup.get(hood) if hood is not None else None
+        if info:
+            borough = row.get("neighbourhood_group_cleansed")
+            if borough is not None and borough != info["borough"]:
+                errors.append(f"Neighbourhood '{hood}' is in {info['borough']}, not {borough}.")
+            # If coordinates weren't given, use the neighbourhood's centre instead of a city-wide median
+            for coord in ("latitude", "longitude"):
+                if coord in used_defaults and coord in row:
+                    row[coord] = info[coord]
+                    used_defaults.remove(coord)
 
         if errors:
             raise InputError(errors)
