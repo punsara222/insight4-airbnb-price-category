@@ -1,0 +1,555 @@
+{
+  "room_type": {
+    "type": "categorical",
+    "allowed": [
+      "Entire home/apt",
+      "Hotel room",
+      "Private room",
+      "Shared room"
+    ]
+  },
+  "neighbourhood_group_cleansed": {
+    "type": "categorical",
+    "allowed": [
+      "Bronx",
+      "Brooklyn",
+      "Manhattan",
+      "Queens",
+      "Staten Island"
+    ]
+  },
+  "neighbourhood_cleansed": {
+    "type": "categorical",
+    "allowed": [
+      "Allerton",
+      "Arden Heights",
+      "Arrochar",
+      "Arverne",
+      "Astoria",
+      "Bath Beach",
+      "Battery Park City",
+      "Bay Ridge",
+      "Bay Terrace",
+      "Bay Terrace, Staten Island",
+      "Baychester",
+      "Bayside",
+      "Bayswater",
+      "Bedford-Stuyvesant",
+      "Belle Harbor",
+      "Bellerose",
+      "Belmont",
+      "Bensonhurst",
+      "Bergen Beach",
+      "Boerum Hill",
+      "Borough Park",
+      "Breezy Point",
+      "Briarwood",
+      "Brighton Beach",
+      "Bronxdale",
+      "Brooklyn Heights",
+      "Brownsville",
+      "Bull's Head",
+      "Bushwick",
+      "Cambria Heights",
+      "Canarsie",
+      "Carroll Gardens",
+      "Castle Hill",
+      "Castleton Corners",
+      "Chelsea",
+      "Chelsea, Staten Island",
+      "Chinatown",
+      "City Island",
+      "Civic Center",
+      "Claremont Village",
+      "Clason Point",
+      "Clifton",
+      "Clinton Hill",
+      "Co-op City",
+      "Cobble Hill",
+      "College Point",
+      "Columbia St",
+      "Concord",
+      "Concourse",
+      "Concourse Village",
+      "Coney Island",
+      "Corona",
+      "Country Club",
+      "Crown Heights",
+      "Cypress Hills",
+      "DUMBO",
+      "Ditmars Steinway",
+      "Dongan Hills",
+      "Douglaston",
+      "Downtown Brooklyn",
+      "Dyker Heights",
+      "East Elmhurst",
+      "East Flatbush",
+      "East Harlem",
+      "East Morrisania",
+      "East New York",
+      "East Village",
+      "Eastchester",
+      "Edenwald",
+      "Edgemere",
+      "Elmhurst",
+      "Eltingville",
+      "Emerson Hill",
+      "Far Rockaway",
+      "Fieldston",
+      "Financial District",
+      "Flatbush",
+      "Flatiron District",
+      "Flatlands",
+      "Flushing",
+      "Fordham",
+      "Forest Hills",
+      "Fort Greene",
+      "Fort Hamilton",
+      "Fort Wadsworth",
+      "Fresh Meadows",
+      "Gerritsen Beach",
+      "Glendale",
+      "Gowanus",
+      "Gramercy",
+      "Graniteville",
+      "Grant City",
+      "Gravesend",
+      "Great Kills",
+      "Greenpoint",
+      "Greenwich Village",
+      "Grymes Hill",
+      "Harlem",
+      "Hell's Kitchen",
+      "Highbridge",
+      "Hollis",
+      "Hollis Hills",
+      "Holliswood",
+      "Howard Beach",
+      "Howland Hook",
+      "Huguenot",
+      "Hunts Point",
+      "Inwood",
+      "Jackson Heights",
+      "Jamaica",
+      "Jamaica Estates",
+      "Jamaica Hills",
+      "Kensington",
+      "Kew Gardens",
+      "Kew Gardens Hills",
+      "Kingsbridge",
+      "Kips Bay",
+      "Laurelton",
+      "Lighthouse Hill",
+      "Little Italy",
+      "Little Neck",
+      "Long Island City",
+      "Longwood",
+      "Lower East Side",
+      "Manhattan Beach",
+      "Marble Hill",
+      "Mariners Harbor",
+      "Maspeth",
+      "Melrose",
+      "Middle Village",
+      "Midland Beach",
+      "Midtown",
+      "Midwood",
+      "Mill Basin",
+      "Morningside Heights",
+      "Morris Heights",
+      "Morris Park",
+      "Morrisania",
+      "Mott Haven",
+      "Mount Eden",
+      "Mount Hope",
+      "Murray Hill",
+      "Navy Yard",
+      "Neponsit",
+      "New Brighton",
+      "New Dorp Beach",
+      "New Springville",
+      "NoHo",
+      "Nolita",
+      "North Riverdale",
+      "Norwood",
+      "Olinville",
+      "Ozone Park",
+      "Park Slope",
+      "Parkchester",
+      "Pelham Bay",
+      "Pelham Gardens",
+      "Port Morris",
+      "Port Richmond",
+      "Prince's Bay",
+      "Prospect Heights",
+      "Prospect-Lefferts Gardens",
+      "Queens Village",
+      "Randall Manor",
+      "Red Hook",
+      "Rego Park",
+      "Richmond Hill",
+      "Ridgewood",
+      "Riverdale",
+      "Rockaway Beach",
+      "Roosevelt Island",
+      "Rosebank",
+      "Rosedale",
+      "Rossville",
+      "Schuylerville",
+      "Sea Gate",
+      "Sheepshead Bay",
+      "Shore Acres",
+      "Silver Lake",
+      "SoHo",
+      "Soundview",
+      "South Beach",
+      "South Ozone Park",
+      "South Slope",
+      "Springfield Gardens",
+      "Spuyten Duyvil",
+      "St. Albans",
+      "St. George",
+      "Stapleton",
+      "Stuyvesant Town",
+      "Sunnyside",
+      "Sunset Park",
+      "Theater District",
+      "Throgs Neck",
+      "Todt Hill",
+      "Tompkinsville",
+      "Tottenville",
+      "Tremont",
+      "Tribeca",
+      "Two Bridges",
+      "Unionport",
+      "University Heights",
+      "Upper East Side",
+      "Upper West Side",
+      "Van Nest",
+      "Vinegar Hill",
+      "Wakefield",
+      "Washington Heights",
+      "West Brighton",
+      "West Farms",
+      "West Village",
+      "Westchester Square",
+      "Westerleigh",
+      "Whitestone",
+      "Williamsbridge",
+      "Williamsburg",
+      "Willowbrook",
+      "Windsor Terrace",
+      "Woodhaven",
+      "Woodlawn",
+      "Woodrow",
+      "Woodside"
+    ]
+  },
+  "property_type": {
+    "type": "categorical",
+    "allowed": [
+      "Barn",
+      "Boat",
+      "Camper/RV",
+      "Casa particular",
+      "Castle",
+      "Dome",
+      "Entire bungalow",
+      "Entire condo",
+      "Entire cottage",
+      "Entire guest suite",
+      "Entire guesthouse",
+      "Entire home",
+      "Entire loft",
+      "Entire place",
+      "Entire rental unit",
+      "Entire serviced apartment",
+      "Entire townhouse",
+      "Entire vacation home",
+      "Entire villa",
+      "Houseboat",
+      "Private room",
+      "Private room in bed and breakfast",
+      "Private room in bungalow",
+      "Private room in camper/rv",
+      "Private room in casa particular",
+      "Private room in castle",
+      "Private room in cave",
+      "Private room in condo",
+      "Private room in cottage",
+      "Private room in dorm",
+      "Private room in earthen home",
+      "Private room in guest suite",
+      "Private room in guesthouse",
+      "Private room in home",
+      "Private room in hostel",
+      "Private room in houseboat",
+      "Private room in kezhan",
+      "Private room in loft",
+      "Private room in ranch",
+      "Private room in religious building",
+      "Private room in rental unit",
+      "Private room in resort",
+      "Private room in serviced apartment",
+      "Private room in tiny home",
+      "Private room in townhouse",
+      "Private room in vacation home",
+      "Private room in villa",
+      "Room in aparthotel",
+      "Room in bed and breakfast",
+      "Room in boutique hotel",
+      "Room in hotel",
+      "Room in serviced apartment",
+      "Shared room in bed and breakfast",
+      "Shared room in casa particular",
+      "Shared room in condo",
+      "Shared room in guest suite",
+      "Shared room in guesthouse",
+      "Shared room in home",
+      "Shared room in rental unit",
+      "Shared room in serviced apartment",
+      "Shared room in townhouse",
+      "Shared room in villa",
+      "Tiny home",
+      "Tower"
+    ]
+  },
+  "host_is_superhost": {
+    "type": "categorical",
+    "allowed": [
+      "f",
+      "t"
+    ]
+  },
+  "host_identity_verified": {
+    "type": "categorical",
+    "allowed": [
+      "f",
+      "t"
+    ]
+  },
+  "host_has_profile_pic": {
+    "type": "categorical",
+    "allowed": [
+      "f",
+      "t"
+    ]
+  },
+  "has_availability": {
+    "type": "categorical",
+    "allowed": [
+      "f",
+      "t"
+    ]
+  },
+  "hosts_time_as_user_years": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 17.0
+  },
+  "hosts_time_as_user_months": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 11.0
+  },
+  "hosts_time_as_host_years": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 15.0
+  },
+  "hosts_time_as_host_months": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 11.0
+  },
+  "host_listings_count": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 5978.0
+  },
+  "latitude": {
+    "type": "numeric",
+    "min": 40.50456,
+    "max": 40.911683
+  },
+  "longitude": {
+    "type": "numeric",
+    "min": -74.251907,
+    "max": -73.71365
+  },
+  "accommodates": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 16.0
+  },
+  "bathrooms": {
+    "type": "numeric",
+    "min": 0.5,
+    "max": 15.5
+  },
+  "bedrooms": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 19.0
+  },
+  "beds": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 40.0
+  },
+  "minimum_nights": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 365.0
+  },
+  "maximum_nights": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 2147483647.0
+  },
+  "minimum_minimum_nights": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 365.0
+  },
+  "maximum_minimum_nights": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 1000.0
+  },
+  "minimum_maximum_nights": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 2147483647.0
+  },
+  "maximum_maximum_nights": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 2147483647.0
+  },
+  "minimum_nights_avg_ntm": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 564.2
+  },
+  "maximum_nights_avg_ntm": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 2147483647.0
+  },
+  "availability_30": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 30.0
+  },
+  "availability_60": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 60.0
+  },
+  "availability_90": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 90.0
+  },
+  "availability_365": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 365.0
+  },
+  "number_of_reviews": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 4502.0
+  },
+  "number_of_reviews_ltm": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 1225.0
+  },
+  "number_of_reviews_l30d": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 87.0
+  },
+  "availability_eoy": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 201.0
+  },
+  "number_of_reviews_ly": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 1557.0
+  },
+  "estimated_occupancy_l365d": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 255.0
+  },
+  "review_scores_rating": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "review_scores_accuracy": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "review_scores_cleanliness": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "review_scores_checkin": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "review_scores_communication": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "review_scores_location": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "review_scores_value": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 5.0
+  },
+  "calculated_host_listings_count": {
+    "type": "numeric",
+    "min": 1.0,
+    "max": 955.0
+  },
+  "calculated_host_listings_count_entire_homes": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 955.0
+  },
+  "calculated_host_listings_count_private_rooms": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 231.0
+  },
+  "calculated_host_listings_count_shared_rooms": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 22.0
+  },
+  "reviews_per_month": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 115.63
+  },
+  "has_reviews": {
+    "type": "numeric",
+    "min": 0.0,
+    "max": 1.0
+  }
+}
