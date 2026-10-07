@@ -54,3 +54,28 @@ Invalid input returns HTTP 422 with `{"message": ..., "errors": [...]}`.
 
 ## Dataset
 Inside Airbnb - New York City listings. http://insideairbnb.com/get-the-data/
+
+## Testing
+
+In addition to the smoke test, the final model was independently verified by the 
+Random Forest owner before deployment.
+
+**Model verification** — confirms `final_model.pkl` is genuinely the tuned Random 
+Forest (not the baseline), and that it reproduces the notebook's results:
+```bash
+python tools/check_model.py                 # confirms n_estimators=200 (Tuned)
+python tools/verify_sample_predictions.py    # 5/5 sample predictions match expected output
+```
+
+**Backend test cases** — 8 test cases run against the live API (5 known listings + 
+3 invalid inputs):
+```bash
+uvicorn backend.app:app --reload    # start the backend first, in a separate terminal
+python tests/model_test_cases.py    # then run the test cases
+```
+Results are logged to `tests/test_results_output.txt`.
+
+| Test type | Cases | Result |
+|---|---|---|
+| Known listings (expected price_category) | 5 | 5/5 correct |
+| Invalid input (missing fields, out-of-range values, unknown categories) | 3 | 3/3 correctly rejected with HTTP 422 |
