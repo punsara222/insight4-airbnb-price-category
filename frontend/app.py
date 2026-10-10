@@ -31,157 +31,107 @@ st.markdown(
         --sage: #8A8E75;
         --bark: #68604D;
         --olivewood: #2D2F22;
-        --card: #FAF7EE;
-        --track: #E4DAC4;
+        --card: #3A3D2E;
+        --track: #4A4D3C;
         --sage-deep: #70745C;
     }
 
-    /* ===== LIGHT MODE ===== */
-    .stApp { background-color: var(--parchment); color: var(--olivewood); }
-    h1, h2, h3 { color: var(--olivewood) !important; }
-    p, label, .stMarkdown { color: var(--olivewood) !important; }
-    [data-testid="stWidgetLabel"] p { font-weight: 600; }
-    [data-testid="stCaptionContainer"],
-    [data-testid="stCaptionContainer"] p { color: var(--bark) !important; }
-    .stApp code { background-color: var(--sand) !important; color: var(--olivewood) !important; }
-    [data-testid="stTooltipIcon"] svg { color: var(--bark) !important; opacity: 1 !important; }
+    /* ===== FORCED DARK MODE (MATCHING SCREENSHOT) ===== */
+    .stApp { background-color: var(--olivewood) !important; color: var(--parchment) !important; }
+    h1, h2, h3 { color: var(--parchment) !important; }
+    p, label, .stMarkdown { color: var(--parchment) !important; }
+    [data-testid="stWidgetLabel"] p { font-weight: 600 !important; color: var(--parchment) !important; }
 
     /* Form card */
     [data-testid="stForm"] {
-        background-color: var(--card);
-        border: 1px solid var(--sand);
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(45, 47, 34, 0.08);
+        background-color: var(--card) !important;
+        border: 1px solid var(--bark) !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
     }
 
-    /* Dropdowns and number inputs */
+    /* Dropdowns */
     div[data-baseweb="select"] > div {
-        background-color: var(--card) !important;
+        background-color: #2A2E20 !important;
         border: 1px solid var(--sage) !important;
-        border-radius: 7px;
+        border-radius: 7px !important;
     }
-    div[data-baseweb="select"] span { color: var(--olivewood) !important; }
-    div[role="listbox"] { background-color: var(--card) !important; }
-    div[role="option"] { color: var(--olivewood) !important; }
-    div[role="option"]:hover { background-color: var(--olive) !important; }
-    div[data-testid="stNumberInput"] { background-color: var(--card) !important; border-radius: 7px; }
-    div[data-testid="stNumberInput"] input { background-color: var(--card) !important; color: var(--olivewood) !important; }
-    div[data-testid="stNumberInput"] button { color: var(--bark) !important; }
+    div[data-baseweb="select"] span { color: var(--parchment) !important; }
+    div[role="listbox"] { background-color: #2A2E20 !important; }
+    div[role="option"] { color: var(--parchment) !important; }
+    div[role="option"]:hover { background-color: var(--bark) !important; }
+
+    /* Number inputs */
+    div[data-testid="stNumberInput"] { background-color: #2A2E20 !important; border-radius: 7px !important; }
+    div[data-testid="stNumberInput"] input { background-color: #2A2E20 !important; color: var(--parchment) !important; }
+    div[data-testid="stNumberInput"] button { color: var(--sand) !important; }
 
     /* Predict button */
     .stButton > button,
     [data-testid="stFormSubmitButton"] button {
-        background-color: var(--olivewood) !important;
-        border: none; border-radius: 8px; font-weight: 600;
+        background-color: var(--olive) !important;
+        border: none !important; border-radius: 8px !important; font-weight: 600 !important;
     }
     .stButton > button:hover,
-    [data-testid="stFormSubmitButton"] button:hover { background-color: var(--bark) !important; }
+    [data-testid="stFormSubmitButton"] button:hover { background-color: var(--sand) !important; }
     .stButton > button p,
-    [data-testid="stFormSubmitButton"] button p { color: var(--parchment) !important; }
+    [data-testid="stFormSubmitButton"] button p { color: var(--olivewood) !important; }
 
-    /* Topic headings, one colour each */
+    /* Section headings */
     .section-title {
         font-size: 1.2rem; font-weight: 700;
         padding: 6px 14px; margin: 18px 0 10px;
         border-radius: 6px; border-left: 5px solid;
     }
-    .sec-location { background: var(--olive);     color: var(--olivewood); border-left-color: var(--sage-deep); }
-    .sec-property { background: var(--sand);      color: var(--olivewood); border-left-color: var(--bark); }
-    .sec-capacity { background: var(--bark);      color: var(--parchment); border-left-color: var(--olivewood); }
-    .sec-result   { background: var(--olivewood); color: var(--parchment); border-left-color: var(--sage); }
+    .sec-location { background: var(--olive) !important;     color: var(--olivewood) !important; border-left-color: var(--sage-deep) !important; }
+    .sec-property { background: var(--sand) !important;      color: var(--olivewood) !important; border-left-color: var(--bark) !important; }
+    .sec-capacity { background: var(--sand) !important;      color: var(--olivewood) !important; border-left-color: var(--sand) !important; }
+    .sec-result   { background: var(--card) !important;      color: var(--parchment) !important; border-left-color: var(--olive) !important; }
 
-    /* Result badge: Low / Medium / High colours kept as they were */
+    /* Result badge */
     .price-badge {
         display: inline-block; padding: 10px 22px; border-radius: 8px;
         font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 8px;
     }
-    .badge-low    { background-color: #DCFCE7; color: #166534; }
-    .badge-medium { background-color: #FEF3C7; color: #92400E; }
-    .badge-high   { background-color: #FEE2E2; color: #991B1B; }
-    .explain-line { font-size: 1rem; color: var(--bark); margin-top: 4px; }
+    .badge-low    { background-color: #DCFCE7 !important; color: #166534 !important; }
+    .badge-medium { background-color: #FEF3C7 !important; color: #92400E !important; }
+    .badge-high   { background-color: #FEE2E2 !important; color: #991B1B !important; }
+    .explain-line { font-size: 1rem; color: var(--sand) !important; margin-top: 4px; }
 
-    /* Probability bars: same green / orange / red as the badges */
-    .prob-row { display: flex; justify-content: space-between; font-size: 0.95rem; color: var(--olivewood); margin-top: 10px; }
-    .prob-track { background: var(--track); border-radius: 6px; height: 12px; overflow: hidden; margin-top: 4px; }
+    /* Probability bars */
+    .prob-row { display: flex; justify-content: space-between; font-size: 0.95rem; color: var(--parchment) !important; margin-top: 10px; }
+    .prob-track { background: var(--track) !important; border-radius: 6px; height: 12px; overflow: hidden; margin-top: 4px; }
     .prob-fill { height: 100%; border-radius: 6px; }
-    .fill-low { background: #166534; }
-    .fill-medium { background: #92400E; }
-    .fill-high { background: #991B1B; }
+    .fill-low { background: #DCFCE7 !important; }
+    .fill-medium { background: #FEF3C7 !important; }
+    .fill-high { background: #FEE2E2 !important; }
 
-    /* ===== SPECIFIC NOTE CALLOUT CARD STYLING ===== */
+    /* NOTE CALLOUT BANNER (MATCHING SCREENSHOT) */
     [data-testid="stForm"] [data-testid="stCaptionContainer"] {
-        background-color: var(--sand) !important;
+        background-color: #8E8A74 !important;
         border-radius: 12px !important;
         padding: 16px 20px !important;
-        border-left: 6px solid var(--sage-deep) !important;
+        border-left: 6px solid var(--olive) !important;
         margin-top: 10px !important;
         margin-bottom: 16px !important;
     }
 
     [data-testid="stForm"] [data-testid="stCaptionContainer"] p {
-        color: var(--olivewood) !important;
+        color: #2D2F22 !important;
         font-size: 1rem !important;
         font-weight: 600 !important;
         line-height: 1.6 !important;
     }
 
     [data-testid="stForm"] [data-testid="stCaptionContainer"] code {
-        background-color: var(--parchment) !important;
-        color: var(--olivewood) !important;
+        background-color: #FAF7EE !important;
+        color: #2D2F22 !important;
         font-weight: 700 !important;
         padding: 3px 8px !important;
         border-radius: 6px !important;
     }
 
-    /* ===== DARK MODE (must stay last so it overrides the rules above) ===== */
-    @media (prefers-color-scheme: dark) {
-        :root { --card: #3A3D2E; --track: #4A4D3C; }
-        .stApp { background-color: var(--olivewood); color: var(--parchment); }
-        h1, h2, h3 { color: var(--parchment) !important; }
-        p, label, .stMarkdown { color: var(--parchment) !important; }
-        [data-testid="stCaptionContainer"],
-        [data-testid="stCaptionContainer"] p { color: var(--sand) !important; }
-        .stApp code { background-color: var(--bark) !important; color: var(--parchment) !important; }
-        [data-testid="stTooltipIcon"] svg { color: var(--sand) !important; }
-
-        /* Retain Note Card Styling in Dark Mode */
-        [data-testid="stForm"] [data-testid="stCaptionContainer"] {
-            background-color: #8E8A74 !important;
-            border-left: 6px solid var(--olive) !important;
-        }
-
-        [data-testid="stForm"] [data-testid="stCaptionContainer"] p {
-            color: #2D2F22 !important;
-        }
-
-        [data-testid="stForm"] [data-testid="stCaptionContainer"] code {
-            background-color: #FAF7EE !important;
-            color: #2D2F22 !important;
-        }
-
-        [data-testid="stForm"] { border-color: var(--bark); box-shadow: none; }
-        div[data-baseweb="select"] span,
-        div[role="option"],
-        div[data-testid="stNumberInput"] input { color: var(--parchment) !important; }
-        div[role="option"]:hover { background-color: var(--bark) !important; }
-        div[data-testid="stNumberInput"] button { color: var(--sand) !important; }
-
-        .stButton > button,
-        [data-testid="stFormSubmitButton"] button { background-color: var(--olive) !important; }
-        .stButton > button:hover,
-        [data-testid="stFormSubmitButton"] button:hover { background-color: var(--sand) !important; }
-        .stButton > button p,
-        [data-testid="stFormSubmitButton"] button p { color: var(--olivewood) !important; }
-
-        .sec-capacity { border-left-color: var(--sand); }
-        .sec-result   { background: var(--card); border-left-color: var(--olive); }
-
-        .explain-line { color: var(--sand); }
-        .prob-row { color: var(--parchment); }
-        .fill-low { background: #DCFCE7; }
-        .fill-medium { background: #FEF3C7; }
-        .fill-high { background: #FEE2E2; }
-    }
+    [data-testid="stTooltipIcon"] svg { color: var(--sand) !important; fill: var(--sand) !important; }
     </style>
     """,
     unsafe_allow_html=True,
